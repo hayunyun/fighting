@@ -5,7 +5,7 @@ from . import views
  
 app_name = "lessons"
 urlpatterns = [
-    path('<int:id>/', views.show, name="show"),
-    path('', views.home, name="home"),
+    # path('<int:id>/', views.show, name="show"),
+    # path('', views.home, name="home"),
 
 ]
