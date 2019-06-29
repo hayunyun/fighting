@@ -6,6 +6,7 @@ from lessons .models import *
 # Create your views here.
 
 
+
 def classes(request):
     return render(request, 'classes.html')
 
@@ -17,4 +18,6 @@ def home(request):
     else:
         lessons = Order.objects.filter(student=user)
     return render(request, 'home.html', {'user': user, 'lessons': lessons})
+
+
 

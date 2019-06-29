@@ -3,6 +3,16 @@ from django.shortcuts import render, redirect, get_object_or_404
 # from django.contrib.auth.models import User
 # # Create your views here.
 
+# <<<<<<< HEAD
+
+# def show(request, id):
+#     lessons = get_object_or_404(Order, pk=id)
+#     return render(request, 'lessons/show.html', {"lessons": lessons})
+
+# def home(request):
+#     return render(request, 'home.html')
+
+# =======
 # def show(request, id):
 #     lessons = get_object_or_404(Order, pk=id)
 #     return render(request, 'lessons/show.html', {"lessons": lessons})
@@ -10,3 +20,4 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 def first(request):
     return render(request, 'first.html')
+
