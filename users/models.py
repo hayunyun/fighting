@@ -4,8 +4,8 @@ from django.db import models
 
 class User(AbstractUser):
     STATE_CHOICES = (
-        ('Teacher', 'Teacher'),
-        ('Student', 'Student'),
+        ('Teacher', '교사'),
+        ('Student', '학생/학부모'),
     )
     
     state = models.CharField(max_length=100, choices=STATE_CHOICES, blank=True, null=True)
