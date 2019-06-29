@@ -4,7 +4,7 @@ from django.db import models
 
 class User(AbstractUser):
     STATE_CHOICES = (
-        ('Teacher', 'Teacehr'),
+        ('Teacher', 'Teacher'),
         ('Student', 'Student'),
     )
     
