@@ -1,0 +1,14 @@
+{% if user.state == 'Teacher' %}
+    {% for lesson in lessonsOfTeacher %}
+        {{ lesson.name }}
+    {% endfor %}
+{% endif %}
+
+<br>
+
+{% if user.state == 'Student' %}
+    {% for lesson in lessonsOfStudent %}
+        {{ lesson.lesson }}
+    {% endfor %}
+{% endif %}
+
