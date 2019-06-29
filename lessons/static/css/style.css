@@ -810,10 +810,6 @@ button:focus {
           display: block; } }
 
 .register_form {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
   background: #fff;
   text-align: center;
   padding: 40px; }
