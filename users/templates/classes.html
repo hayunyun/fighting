@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  </head>
+
+  <body >
+      
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">My Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#attendance">Attendance</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#material">Material</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#assignment">Assignment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#score">Score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#message">Message</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <section id="attendance">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Attendance</h2>
+            <p class="lead">T</p>
+            <ul>
+              <li>Academy Name</li>
+              <li>Student Name</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="material" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Material</h2>
+            <p class="lead">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"> Week 1</h5>
+                      <h6 class="card-subtitle mb-2 text-muted"> 1주차 수업자료</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="card-link">link</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Week 2</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">2주차 수업자료</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="card-link">link</a>
+                    </div>
+                </div>
+                
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="assignment">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Assignment</h2>
+            <p class="lead">
+                <div class="card border-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">과제 1</div>
+                    <div class="card-body text-primary">
+                      <h5 class="card-title">p. 184 - 190</h5>
+                      <p class="card-text">제출기한 : 2019 / 06 / 30</p>
+                    </div>
+                  </div>
+                  <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">과제 2</div>
+                    <div class="card-body text-secondary">
+                      <h5 class="card-title">단어 100개 외워오기</h5>
+                      <p class="card-text">제출기한 : 2019 / 07 / 01</p>
+                    </div>
+                  </div>
+                  <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header">과제 3</div>
+                    <div class="card-body text-success">
+                      <h5 class="card-title">공부하기싫다</h5>
+                      <p class="card-text">제출기한 :</p>
+                    </div>
+                  </div>
+                  <div class="card border-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-header">과제 4</div>
+                    <div class="card-body text-danger">
+                      <h5 class="card-title">자고싶당</h5>
+                      <p class="card-text">제출기한 : </p>
+                    </div>
+                  </div> 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="score">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2>Score</h2>
+              <p class="lead">
+                성적 분석 그래프 
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="message">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2>Message</h2>
+                <p class="lead">
+                  선생님과 연락을 할 수 있당
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+  
+
+  </body>
+    
+</html>
+
+
+
+{% endblock %}
