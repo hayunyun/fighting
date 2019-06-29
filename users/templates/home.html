@@ -1,7 +1,21 @@
+{% extends 'base.html' %}
+
+
+
+<br>
+<br>
+<br>
+{% block content %}
+
+
+<div>
 {% if user.state == 'Teacher' %}
     {% if lessons.count > 0 %}
     {% for lesson in lessons %}
-        {{ lesson.name }}
+    <ul class="list-group">
+        <li class="list-group-item active"><a>{{ lesson.name }}</a></li>
+        <br>
+    </ul>
     {% endfor %}
     {% else %}
     No Lessons
@@ -9,7 +23,10 @@
 {% elif user.state == 'Student' %}
     {% if lessons.count > 0 %}
     {% for lesson in lessons %}
-        {{ lesson.lesson }}
+    <ul class="list-group">
+        <li class="list-group-item active"><a>{{ lesson.lesson }}</a></li>
+        <br>
+    </ul>
     {% endfor %}
     {% else %}
     No Lessons
@@ -17,4 +34,7 @@
 {% else %}
 Not teacher, Not student
 {% endif %}
+</div>
+
+{% endblock %}
 
