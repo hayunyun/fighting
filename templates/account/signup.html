@@ -3,44 +3,54 @@
 {% block content %}
 
 
-
-<body class="vsc-initialized">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">MENU</a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/accounts/login/">LogIn</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/accounts/signup/">Sign Up</a><span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-<br>
-<div class="card">
-  <div class="card-body">
-        <h1>Sign Up</h1>
-    
-    <p>아래 정보를 입력해 회원 가입을 진행해주세요. 계정이 있다면, <a href="/accounts/login/">로그인하세요</a>.</p>
-    
-    <form class="signup" id="signup_form" method="post" action="/accounts/signup/">
-        <input type="hidden" name="csrfmiddlewaretoken" value="aMY9mZlpPUBKOmxMrATiqdmsdlALERNCz2UlXth4Ql2OVQWDGRPDW9TcJt5tI9lL">
-        <p><label for="id_username">ID : </label> <input type="text" name="username" minlength="1" required="" autofocus="autofocus" maxlength="150" id="id_username" placeholder="ID"></p>
-        <p><label for="id_email">E-mail : </label> <input type="email" name="email" id="id_email" placeholder="E-mail address"></p>
-        <p><label for="id_password1">Password : </label> <input type="password" name="password1" required="" id="id_password1" placeholder="Password"></p>
-        <p><label for="id_password2">Password confirm : </label> <input type="password" name="password2" required="" id="id_password2" placeholder="Password"></p>
-        
-        <button type="submit">Sign Up »</button>
-        {% csrf_token %}
-    </form>
-  </div>
+<div class="col-lg-6 " align="center">
+          <div class="register_form">
+            <h2>Sign Up</h2>
+            <p>아래 정보를 입력해 회원 가입을 진행해주세요. <br>계정이 있다면, <a href="/accounts/login/">로그인하세요</a>.</p>
+            <form class="signup" id="signup_form" method="post" action="/accounts/signup/">
+              <input type="hidden" name="csrfmiddlewaretoken" value="aMY9mZlpPUBKOmxMrATiqdmsdlALERNCz2UlXth4Ql2OVQWDGRPDW9TcJt5tI9lL">
+              <div class="row">
+                <div class="col-lg-12 form_group">
+                  <input
+                    name="username"
+                    placeholder="이름(영어로)"
+                    required=""
+                    autofocus="autofocus"
+                    id="id_username"
+                    type="text"
+                  />
+                  <input
+                    name="email"
+                    placeholder="이메일"
+                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                    required=""
+                    id="id_email"
+                    type="email"
+                  />
+                  <input
+                    name="password1"
+                    placeholder="비밀번호"
+                    required=""
+                    type="password"
+                    id="id_password1"
+                  />
+                  <input
+                    name="password2"
+                    placeholder="비밀번호 확인"
+                    required=""
+                    type="password"
+                    id="id_password2"
+                  />
+                </div>
+                <div class="col-lg-12 text-center">
+                  <button class="primary-btn">Sign Up</button>
+                  {% csrf_token %}
+                </div>
+              </div>
+            </form>
+          </div>
 </div>
+
 
 
 </body>
