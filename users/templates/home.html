@@ -1,14 +1,20 @@
 {% if user.state == 'Teacher' %}
-    {% for lesson in lessonsOfTeacher %}
+    {% if lessons.count > 0 %}
+    {% for lesson in lessons %}
         {{ lesson.name }}
     {% endfor %}
-{% endif %}
-
-<br>
-
-{% if user.state == 'Student' %}
-    {% for lesson in lessonsOfStudent %}
+    {% else %}
+    No Lessons
+    {% endif %}
+{% elif user.state == 'Student' %}
+    {% if lessons.count > 0 %}
+    {% for lesson in lessons %}
         {{ lesson.lesson }}
     {% endfor %}
+    {% else %}
+    No Lessons
+    {% endif %}
+{% else %}
+Not teacher, Not student
 {% endif %}
 
