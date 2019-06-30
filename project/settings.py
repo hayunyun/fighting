@@ -133,7 +133,7 @@ SITE_ID = 1
 AUTH_USER_MODEL = 'users.User'
 
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home'
 
 
 
