@@ -120,8 +120,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
 
 USE_L10N = True
@@ -132,23 +130,11 @@ TIME_ZONE = 'Asia/Seoul'
 
 SITE_ID = 1
 
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
 AUTH_USER_MODEL = 'users.User'
 
-ACCOUNT_ALLOW_REGISTRATION = True
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGIN_REDIRECT_URL = '/'
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-
-LOGIN_REDIRECT_URL = 'home'
-
-LOGIN_URL = 'account_login'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -165,20 +151,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'project', 'media')
 
 # 로그인 시 유저네임으로 로그인 (or email)
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # 회원가입 시 이메일 입력 필수 여부
-ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_REQUIRED = True
 # 회원가입 시 이메일 인증 관련 코드
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 AUTHENTICATION_BACKENDS = (
     # 쟝고 superuser로 로그인 가능
     "django.contrib.auth.backends.ModelBackend",
-    
     # 이메일 등으로 로그인 가능
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/home/'
-LOGOUT_REDIRECT_URL = '/'
-

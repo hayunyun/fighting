@@ -10,6 +10,8 @@ from lessons .models import *
 def classes(request):
     return render(request, 'classes.html')
 
+
+
 @login_required
 def home(request):
     user = request.user
@@ -18,6 +20,9 @@ def home(request):
     else:
         lessons = Order.objects.filter(student=user)
     return render(request, 'home.html', {'user': user, 'lessons': lessons})
+
+
+
 
 
 

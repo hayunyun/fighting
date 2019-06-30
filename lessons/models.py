@@ -24,7 +24,25 @@ class Order(TimeStampedModel):
     def __str__(self):
         return "{}가 {}를 신청함".format(self.student.username, self.lesson.name)
     
+
+
+
+class Attendance(TimeStampedModel):
+    ATTENDANCE_CHOICES = (
+        ('Yes', '출석'),
+        ('Late', '지각'),
+        ('No', '결석'),
+    )
+
+    student = models.ForeignKey(User, on_delete=models.CASCADE)
+    attendance = models.CharField(max_length=100, choices=ATTENDANCE_CHOICES, blank=True, null=True)
     
+    def __str__(self):
+        return self.attendance
+
+
+
+
 class Homework(TimeStampedModel):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)

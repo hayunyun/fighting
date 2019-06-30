@@ -1,19 +1,111 @@
 {% extends 'base.html' %}
-
-
-
-<br>
-<br>
-<br>
 {% block content %}
+<br>
+<br>
+<br>
+<br>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://www.blueb.co.kr/data/201010/IJ12872423858253/fullcalendar.css' />
+<script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery.js'></script>
+<script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery-ui-custom.js'></script>
+<script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/fullcalendar.min.js'></script>
+<script type='text/javascript'>
+//유저의 정보를 받아옴
+   $(document).ready(function() {
+   
+      var date = new Date();
+      var d = date.getDate();
+      var m = date.getMonth();
+      var y = date.getFullYear();
+      
+      $('#calendar').fullCalendar({
+         header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,basicWeek,basicDay'
+         },
+         editable: true,
+         events: [ //유저의 일정을 추가
+            {
+               title: '영어 2단원 문제풀기',
+               start: new Date(y, m, 1)
+            },
+            {
+               title: '수학 1단원',
+               start: new Date(y, m, d-5),
+               end: new Date(y, m, d-2)
+            },
+            {
+               title: '과학 1단원 풀기',
+               start: new Date(y, m, d-3, 16, 0),
+               allDay: false
+            },
+            {
+               title: '사회 1단원 문제풀기',
+               start: new Date(y, m, d+4, 16, 0),
+
+                },
+                {
+               title: '사회 1단원 문제풀기',
+                    start: new Date(y, m, d-20, 11),
+                    end: new Date(y, m, d-15)
+
+            },
+            {
+               title: '과학 1단원 풀기',
+               start: new Date(y, m, d, 10, 30),
+            },
+            {
+               title: '사회 2단원 문제풀기',
+               start: new Date(y, m, d, 12, 0),
+               end: new Date(y, m, d, 14, 0),
+            },
+            {
+               title: '영어 2단원 문제풀기',
+               start: new Date(y, m, d+1, 19, 0),
+               end: new Date(y, m, d+1, 22, 30),
+            },
+            {
+               title: '국어 2단원 문제풀기',
+               start: new Date(y, m, 28),
+               end: new Date(y, m, 29),
+               url: 'http://google.com/'
+            }
+         ]
+      });
+      
+   });
+
+</script>
+<style type='text/css'>
+   body {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+      }
+
+   #calendar {
+      width: 900px;
+      margin: 0 auto;
+      }
+
+</style>
+</head>
+<body>
+<div id='calendar'></div>
+</body>
+</html>
 
 <div>
 {% if user.state == 'Teacher' %}
     {% if lessons.count > 0 %}
     {% for lesson in lessons %}
     <ul class="list-group">
-        <li class="list-group-item active"><a>{{ lesson.name }}</a></li>
+        <li class="list-group-item"><a href="{% url 'classes' %}">{{ lesson.name }}</a></li>
         <br>
     </ul>
     {% endfor %}
@@ -24,7 +116,7 @@
     {% if lessons.count > 0 %}
     {% for lesson in lessons %}
     <ul class="list-group">
-        <li class="list-group-item active"><a>{{ lesson.lesson }}</a></li>
+        <li class="list-group-item active"><a href="{% url 'classes' %}">{{ lesson.lesson }}</a></li>
         <br>
     </ul>
     {% endfor %}
